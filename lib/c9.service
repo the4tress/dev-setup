@@ -1,0 +1,12 @@
+[Unit]
+Description=Cloud9 local integrated development environment
+After=nginx.service
+Requires=nginx.service
+
+[Service]
+Type=simple
+User=dev
+ExecStart=/usr/local/bin/node /home/dev/.c9sdk/server.js -w /home/dev
+
+[Install]
+WantedBy=multi-user.target
