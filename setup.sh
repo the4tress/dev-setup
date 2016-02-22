@@ -37,7 +37,10 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
     curl -sSL https://get.docker.com/ | sh
+    sudo systemctl enable docker
     sudo systemctl start docker
+    yum install -y bash-completion
+    wget https://raw.githubusercontent.com/docker/docker/master/contrib/completion/bash/docker -O /etc/bash_completion.d/docker
 fi
 
 # Create dev user
